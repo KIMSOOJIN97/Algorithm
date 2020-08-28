@@ -2,8 +2,11 @@
 
 
 
+1. [BOJ_17825_주사위 윷놀이](#1-BOJ_17825_주사위-윷놀이)
 
-### [BOJ_17825_주사위 윷놀이](https://www.acmicpc.net/problem/17825)<br>
+---<br>
+
+## 1. [BOJ_17825_주사위 윷놀이](https://www.acmicpc.net/problem/17825)<br>
 [코드](./BOJ_주사위윷놀이.cpp)<br>
 시간 : 12ms <br><br>
 
