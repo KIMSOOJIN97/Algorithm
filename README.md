@@ -98,7 +98,5 @@ row or column이 가득찬 경우 해당 행,열을 삭제하므로 블록이 �
     double avg = double(sum) / double(cnt);
 
 
-이런 식으로 T번 반복한 뒤 map에 남아있는 값들을 다 더해서 출력해주면 된다. <br><br>
 
-처음에 문제를 잘못 이해해서 시간이 좀 걸렸다.<br> 
 
