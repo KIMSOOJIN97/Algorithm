@@ -140,7 +140,7 @@ BFS로 바이러스를 퍼뜨리면 된다.<br><br>
 
 
 ### 7. [BOJ_17779_게리멘더링](https://www.acmicpc.net/problem/17779)<br>
-[코드](./BOJ_게리멘더링2.cpp)<br>
+[코드](./BOJ_게리맨더링2.cpp)<br>
 시간 : 4ms <br><br>
 
 시뮬레이션 + DFS 문제<br>
