@@ -74,7 +74,7 @@ row or column이 가득찬 경우 해당 행,열을 삭제하므로 블록이 �
 3. 게임판에 30은 2개 존재<br><br><br>
 
 
-### 5. [BOJ_17822_원판 돌리기](https://www.acmicpc.net/problem/17822)<br>
+### 5. [BOJ_17822_원판돌리기](https://www.acmicpc.net/problem/17822)<br>
 [코드](./BOJ_원판돌리기.cpp)<br>
 시간 : 4ms <br><br>
 
