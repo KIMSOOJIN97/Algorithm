@@ -1,9 +1,10 @@
 # Algorithm for coding test
 
 
-2020/08/28
+
 
 ### [BOJ_17825_주사위 윷놀이](https://www.acmicpc.net/problem/17825)<br>
+[코드](./BOJ_주사위윷놀이.cpp)
 시간 : 12ms <br><br>
 
 문제 조건도 별로 없어서 금방 풀 줄 알았지만 며칠동안 고민했다.<br>
