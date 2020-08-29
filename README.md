@@ -1,7 +1,10 @@
 # Algorithm for coding test
 
-(./1.gif)<br>
+<img src="./1.gif" width="400" height="400" />
+
 ---
+
+
 1. [BOJ_14502_연구소](#1-BOJ_14502_연구소)
 2. [BOJ_19235_모노미노도미노](#2-BOJ_19235_모노미노도미노)
 3. [SWEA_1285_행렬찾기](#3-SWEA_1825_행렬찾기)
