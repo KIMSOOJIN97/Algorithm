@@ -208,9 +208,11 @@ BFS 사용해서 풀 수 있는 문제.<br>
         person[i].score = ( person[i].sx  << 10 ) + ( person[i].sy << 5 );
 
 
-
+<br><br>
 
 ### 11. [BOJ_17837_새로운 게임](https://www.acmicpc.net/problem/17837)<br>
 [코드](./BOJ_새로운게임.cpp)<br>
 시간 : <br>
-제발 맞고싶다..어느 부분을 놓친건지 전혀 
+제발 맞고싶다..어느 부분을 놓친건지 전혀 모르겠음
+
+1. 최댓값을 구해야 되므로 DFS를 사용해야겠다고 생각했다.<br>
