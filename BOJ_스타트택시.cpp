@@ -15,16 +15,16 @@ int tx,ty,fuel;
 
 int N,M;
 int map[MAX][MAX]={0,};
+
+int visited[MAX][MAX]={0,};
 Person person[MAX*MAX]={0,};
 
 int dx[4] = {-1,0,1,0};
 int dy[4] = {0,1,0,-1};
 
-int BFS()
+void BFS()
 {
     int x,y;
-    int visited[MAX][MAX]={0,};
-    
     for(int i=1;i<=N;i++)
     {
         for(int j=1;j<=N;j++)   visited[i][j]=-1;
@@ -52,7 +52,10 @@ int BFS()
             q.push({nx,ny});
         }
     }
+}
 
+int move(){
+    int x,y;
     int len = MAX * MAX;
     int idx =0;
     
@@ -89,42 +92,15 @@ bool solve()
 {
                 
     for(int i=0;i<M;i++){
+        //cout << tx << " " << ty  << " " << fuel << endl;
                 
-        int idx = BFS();
+        BFS();
+        int idx = move();
         
         if(idx == -1 )  return false;
         if(fuel <= 0)   return false;
 
-        
-        int x,y;
-        int visited[MAX][MAX]={0,};
-        for(int i=1;i<=N;i++)
-        {
-            for(int j=1;j<=N;j++)   visited[i][j]=-1;
-        }
-        queue <pair<int ,int>> q;
-        q.push({tx,ty});
-        visited[tx][ty]=0;
-        
-        while(!q.empty()){
-            
-            x = q.front().first;
-            y = q.front().second;
-            if(x == person[idx].dx && y ==person[idx].dy)   break;
-            q.pop();
-            
-            for(int i=0;i<4;i++){
-                
-                int nx = x + dx[i];
-                int ny = y + dy[i];
-                
-                if(nx < 1 || ny < 1 || nx > N || ny > N || map[nx][ny])    continue;
-                if(visited[nx][ny]!=-1 && visited[nx][ny] <= visited[x][y]+1)  continue;
-                
-                visited[nx][ny]=visited[x][y]+1;
-                q.push({nx,ny});
-            }
-        }
+        BFS();
         
         int dest_x = person[idx].dx;
         int dest_y = person[idx].dy;
@@ -142,9 +118,7 @@ bool solve()
 
         fuel += len*2;
     }
-    
     return true;
-    
 }
 
 int main(void)
