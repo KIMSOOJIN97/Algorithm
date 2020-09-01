@@ -216,7 +216,7 @@ BFS 사용해서 풀 수 있는 문제.<br>
 제발 맞고싶다..어느 부분을 놓친건지 전혀 모르겠음
 <br><br><br>
 
-### 12. [BOJ_17143_낚시](https://www.acmicpc.net/problem/17143)<br>
+### 12. [BOJ_17143_낚시왕](https://www.acmicpc.net/problem/17143)<br>
 [코드](./BOJ_낚시왕.cpp)<br>
 시간 : 52ms<br>
 
