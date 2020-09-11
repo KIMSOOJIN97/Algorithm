@@ -21,7 +21,8 @@
 14. [BOJ_1697_숨바꼭질](#14-BOJ_1697_숨바꼭질)
 15. [BOJ_13460_테트로미노]
 16. [BOJ_1697_친구네트워크]
-16. [BOJ_13460_퇴사]
+17. [BOJ_14501_퇴사](https://www.acmicpc.net/problem/14501)
+18. [BOJ_14502_로봇 청소기](https://www.acmicpc.net/problem/14502)
 
 
 ### 1. [BOJ_14502_연구소](https://www.acmicpc.net/problem/14502)<br>
