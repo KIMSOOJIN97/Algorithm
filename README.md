@@ -19,8 +19,8 @@
 12. [BOJ_17143_낚시왕](#12-BOJ_17143_낚시왕)
 13. [BOJ_13460_구슬 탈출2](#13-BOJ_13460_구슬-탈출2)
 14. [BOJ_1697_숨바꼭질](#14-BOJ_1697_숨바꼭질)
-15. [BOJ_13460_테트로미노]
-16. [BOJ_1697_친구네트워크]
+15. [BOJ_13460_테트로미노](https://www.acmicpc.net/problem/13460)
+16. [BOJ_1697_친구네트워크](https://www.acmicpc.net/problem/1697)
 17. [BOJ_14501_퇴사](https://www.acmicpc.net/problem/14501)
 18. [BOJ_14502_로봇 청소기](https://www.acmicpc.net/problem/14502)
 
