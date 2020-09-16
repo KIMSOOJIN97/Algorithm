@@ -8,20 +8,6 @@ int N,K;
 char map[4][8]={0,};
 vector <int> num;
 
-/*
- 5
- 12 10
- 1B3B3B81F75E
- 16 2
- F53586D76286B2D8
-// 테스트 케이스의 개수 T = 5
- // 1번째 테스트 케이스, N=12, K=10
- // N개의 숫자
- // 2번째 테스트 케이스, N=16, K=2
- // N개의 숫자
- 
- */
-
 bool comp(int a, int b)
 {
     return a>b;
