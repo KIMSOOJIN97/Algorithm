@@ -262,7 +262,7 @@ visited 배열을 사용해 이미 방문한 경우 continue를 사용해 다시
 시뮬레이션 문제 <br>
 여러번 풀어본 문제인데 한번에 쉽게 해결하지 못했다. <br><br><br>
 
-### 22. [SWEA_5550_나는 개구리로소이다](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWWxqfhKAWgDFAW4&categoryId=AWWxqfhKAWgDFAW4&categoryType=CODE)<br>
+### 23. [SWEA_5550_나는 개구리로소이다](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWWxqfhKAWgDFAW4&categoryId=AWWxqfhKAWgDFAW4&categoryType=CODE)<br>
 [코드](./SWEA_나는개구리로소이다.c)<br>
 시간 : 3ms<br>
 
