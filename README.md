@@ -27,7 +27,7 @@
 20. [PROG_자물쇠와 열쇠](https://programmers.co.kr/learn/courses/30/lessons/60059)
 21. [SWEA_5658_보물상자 비밀번호](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRUN9KfZ8DFAUo&categoryId=AWXRUN9KfZ8DFAUo&categoryType=CODE)
 22. [BOJ_14890_경사로](#22-BOJ_14890_경사로)
-23. [SWEA_5550_나는 개구리로소이다](#23-SWEA_나는-개구리로소이다)
+23. [SWEA_5550_나는 개구리로소이다](#23-SWEA_5550_나는-개구리로소이다)<br>
 
 ### 1. [BOJ_14502_연구소](https://www.acmicpc.net/problem/14502)<br>
 [코드](./BOJ_연구소.cpp)<br>
