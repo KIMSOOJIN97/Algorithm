@@ -27,7 +27,7 @@
 20. [PROG_자물쇠와 열쇠](https://programmers.co.kr/learn/courses/30/lessons/60059)
 21. [SWEA_5658_보물상자 비밀번호](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRUN9KfZ8DFAUo&categoryId=AWXRUN9KfZ8DFAUo&categoryType=CODE)
 22. [BOJ_14890_경사로](#22-BOJ_14890_경사로)
-23. [SWEA_5550_내가 개구리로소이다](#23-SWEA_내가-개구리로소이다)
+23. [SWEA_5550_ 개구리로소이다](#23-SWEA_나는-개구리로소이다)
 
 ### 1. [BOJ_14502_연구소](https://www.acmicpc.net/problem/14502)<br>
 [코드](./BOJ_연구소.cpp)<br>
@@ -260,5 +260,13 @@ visited 배열을 사용해 이미 방문한 경우 continue를 사용해 다시
 시간 : 0ms<br>
 
 시뮬레이션 문제 <br>
-여러번 풀어본 문제인데 한번에 쉽게 해결하지 못했다. <br>
+여러번 풀어본 문제인데 한번에 쉽게 해결하지 못했다. <br><br><br>
+
+### 22. [SWEA_5550_나는 개구리로소이다](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWWxqfhKAWgDFAW4&categoryId=AWWxqfhKAWgDFAW4&categoryType=CODE)<br>
+[코드](./SWEA_나는개구리로소이다.c)<br>
+시간 : 3ms<br>
+
+원래 cpp로 풀었을 때 6ms 나왔다.<br>
+cout, cin 모두 printf, scanf로 바꿔주니까 3ms가 나왔다.<br><br><br>
+
 
