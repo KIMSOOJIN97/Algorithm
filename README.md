@@ -271,3 +271,9 @@ visited 배열을 사용해 이미 방문한 경우 continue를 사용해 다시
 cout, cin 모두 printf, scanf로 바꿔주니까 3ms가 나왔다.<br><br><br>
 
 
+### 24. [BOJ_14891_톱니바퀴](https://www.acmicpc.net/problem/14891)<br>
+[코드](./BOJ_톱니바퀴.cpp)<br>
+시간 : 0ms<br>
+
+시뮬레이션 문제 <br>
+회전하는 함수랑 회전시킬지 결정하는 함수 각각 구현해서 풀었다. <br><br><br>
