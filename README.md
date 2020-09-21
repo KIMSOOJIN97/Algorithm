@@ -285,3 +285,11 @@ cout, cin 모두 printf, scanf로 바꿔주니까 3ms가 나왔다.<br><br><br>
 시간 : 16ms<br>
 
 CCTV 종류에 따라 경우의 수 구해서 풀었다.<br><br><br>
+
+
+
+### 26. [PROG_42884_단속카메라](https://programmers.co.kr/learn/courses/30/lessons/42884)<br>
+[코드](./PROG_단속카메라.cpp)<br>
+시간 : <br>
+
+CCTV 종류에 따라 경우의 수 구해서 풀었다.<br><br><br>
