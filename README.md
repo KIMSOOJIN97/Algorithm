@@ -290,7 +290,7 @@ CCTV 종류에 따라 경우의 수 구해서 풀었다.<br><br><br>
 
 ### 26. [PROG_42884_단속카메라](https://programmers.co.kr/learn/courses/30/lessons/42884)<br>
 [코드](./PROG_단속카메라.cpp)<br>
-시간 : <br>
+시간 : 0ms <br>
 
 세상 간단한 문제 처음에 너무 복잡하게 풀었다.<br>
 차량의 이동 경로 오름차순으로 정렬해주고 <br>
