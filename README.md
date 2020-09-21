@@ -278,3 +278,10 @@ cout, cin 모두 printf, scanf로 바꿔주니까 3ms가 나왔다.<br><br><br>
 
 시뮬레이션 문제 <br>
 회전하는 함수랑 회전시킬지 결정하는 함수 각각 구현해서 풀었다. <br><br><br>
+
+
+### 25. [BOJ_15683_감시](https://www.acmicpc.net/problem/15683)<br>
+[코드](./BOJ_감시.cpp)<br>
+시간 : 16ms<br>
+
+CCTV 종류에 따라 경우의 수 구해서 풀었다.<br><br><br>
