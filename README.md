@@ -300,3 +300,6 @@ CCTV 종류에 따라 경우의 수 구해서 풀었다.<br><br><br>
 차량의 이동 경로 오름차순으로 정렬해주고 <br>
 차량의 시작 부분이 현재 cctv의 위치보다 뒤에 있는 경우 CCTV 개수 1 증가
 차량의 끝 부분이 현재 cctv의 위치보다 앞에 있는 경우 CCTV 위치만 update <br><br><br>
+
+### 27. [SWEA_5648_원자 소멸 시뮬레이션](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRFInKex8DFAUo&categoryId=AWXRFInKex8DFAUo&categoryType=CODE)<br>
+[코드](./SWEA_.cpp)<br>
