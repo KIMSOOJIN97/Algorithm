@@ -303,3 +303,15 @@ CCTV 종류에 따라 경우의 수 구해서 풀었다.<br><br><br>
 
 ### 27. [SWEA_5648_원자 소멸 시뮬레이션](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRFInKex8DFAUo&categoryId=AWXRFInKex8DFAUo&categoryType=CODE)<br>
 [코드](./SWEA_원자소멸시뮬레이션.cpp)<br>
+사실 아직 런타임에러,, <br><br><br>
+
+### 28. [BOJ_15684_사다리조작](https://www.acmicpc.net/problem/15684)<br>
+[코드](./BOJ_사다리조작.cpp)<br>
+시간 : 0ms<br>
+
+DFS를 사용해서 사다리를 N개 추가해줬다.<br>
+처음 풀었을 때 visited를 어떻게 처리해줘야 될지 몰랐다.<br>
+따로 중복처리 안해주니까 560ms 나왔다.<br>
+이중 for문 순서 바꾸니까 0ms로 줄었다.(열 증가 -> 행 증가 )<br><br><br>
+
+
