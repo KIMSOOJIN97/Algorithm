@@ -315,4 +315,11 @@ DFS를 사용해서 사다리를 N개 추가해줬다.<br>
 이중 for문 순서 바꾸니까 0ms로 줄었다.(열 증가 -> 행 증가 )<br>
 #### visited 자료형 int 말고 bool로 하자 !<br><br><br>
 
+### 29. [PROG_42628_이중우선순위큐](https://programmers.co.kr/learn/courses/30/lessons/42628)<br>
+[코드](./PROG_이중우선순위큐.cpp)<br>
+시간 : ms<br>
+
+string 관련 함수 익숙지도록 <br>
+substr, stoi 등..<br><br><br>
+
 
