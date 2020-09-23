@@ -327,5 +327,6 @@ substr, stoi 등..<br><br><br>
 [코드](./SWEA_지뢰찾기.cpp)<br>
 시간 : 153ms<br>
 
-문제를 잘 읽자
+문제를 잘 읽자<br>
+시간도 줄여보자<br>
 #### visited 자료형 int 말고 bool로 하자 !<br><br><br>
