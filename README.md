@@ -313,8 +313,7 @@ CCTV 종류에 따라 경우의 수 구해서 풀었다.<br><br><br>
 DFS를 사용해서 사다리를 N개 추가해줬다.<br>
 처음 풀었을 때 2차원 배열의 visited를 어떻게 처리해줘야 될지 몰랐다.<br>
 따로 중복처리 안해주니까 560ms 나왔다.<br>
-이중 for문 순서 바꾸니까 0ms로 줄었다.(열 증가 -> 행 증가 )<br>
-#### visited 자료형 int 말고 bool로 하자 !<br><br><br>
+이중 for문 순서 바꾸니까 0ms로 줄었다.(열 증가 -> 행 증가 )<br><br><br>
 
 ### 29. [PROG_42628_이중우선순위큐](https://programmers.co.kr/learn/courses/30/lessons/42628)<br>
 [코드](./PROG_이중우선순위큐.cpp)<br>
@@ -324,3 +323,9 @@ string 관련 함수 익숙지도록 <br>
 substr, stoi 등..<br><br><br>
 
 
+### 30. [SWEA_1868_파핑파핑 지뢰찾기] (https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5LwsHaD1MDFAXc&categoryId=AV5LwsHaD1MDFAXc&categoryType=CODE)<br>
+[코드](./SWEA_지뢰찾기.cpp)<br>
+시간 : 153ms<br>
+
+문제를 잘 읽자
+#### visited 자료형 int 말고 bool로 하자 !<br><br><br>
