@@ -323,7 +323,7 @@ string 관련 함수 익숙지도록 <br>
 substr, stoi 등..<br><br><br>
 
 
-### 30. [SWEA_1868_파핑파핑 지뢰찾기] (https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5LwsHaD1MDFAXc&categoryId=AV5LwsHaD1MDFAXc&categoryType=CODE)<br>
+### 30. [SWEA_1868_파핑파핑 지뢰찾기](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5LwsHaD1MDFAXc&categoryId=AV5LwsHaD1MDFAXc&categoryType=CODE)<br>
 [코드](./SWEA_지뢰찾기.cpp)<br>
 시간 : 153ms<br>
 
