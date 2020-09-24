@@ -332,3 +332,11 @@ substr, stoi 등..<br><br><br>
 문제를 잘 읽자<br>
 시간도 줄여보자<br>
 #### visited 자료형 int 말고 bool로 하자 !<br><br><br>
+
+### 28. [BOJ_15685_드래곤커브](https://www.acmicpc.net/problem/15685)<br>
+[코드](./BOJ_드래곤커브.cpp)<br>
+시간 : 0ms<br><br><br>
+
+### 32. [PROG_67259_경주로건설](https://programmers.co.kr/learn/courses/30/lessons/67259)<br>
+[코드](./PROG_경주로건설.cpp)<br>
+시간 : ms<br>
