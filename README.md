@@ -333,7 +333,7 @@ substr, stoi 등..<br><br><br>
 시간도 줄여보자<br>
 #### visited 자료형 int 말고 bool로 하자 !<br><br><br>
 
-### 28. [BOJ_15685_드래곤커브](https://www.acmicpc.net/problem/15685)<br>
+### 31. [BOJ_15685_드래곤커브](https://www.acmicpc.net/problem/15685)<br>
 [코드](./BOJ_드래곤커브.cpp)<br>
 시간 : 0ms<br><br><br>
 
