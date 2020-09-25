@@ -36,7 +36,8 @@
 29. [PROG_42628_이중우선순위큐](#29-PROG_42628_이중우선순위큐)<br>
 30. [SWEA_1868_파핑파핑 지뢰찾기](#30-SWEA_1868_파핑파핑-지뢰찾기)<br>
 31. [BOJ_15685 드래곤커브](#31-BOJ_15685_드래곤커브)<br>
-32. [PROG_67259 경주로건설](#32-PROG_67259_경주로건설)<br><br><br>
+32. [PROG_67259 경주로건설](#32-PROG_67259_경주로건설)<br>
+33. [BOJ_15686_치킨배달](#33-BOJ_15686_치킨배달)<br><br><br>
 
 ### 1. [BOJ_14502_연구소](https://www.acmicpc.net/problem/14502)<br>
 [코드](./BOJ_연구소.cpp)<br>
@@ -339,4 +340,8 @@ substr, stoi 등..<br><br><br>
 
 ### 32. [PROG_67259_경주로건설](https://programmers.co.kr/learn/courses/30/lessons/67259)<br>
 [코드](./PROG_경주로건설.cpp)<br>
-시간 : ms<br>
+시간 : ms<br><br><br>
+
+### 33. [BOJ_15686_치킨배달](https://www.acmicpc.net/problem/15686)<br>
+[코드](./BOJ_치킨배달.cpp)<br>
+시간 : 4ms<br><br><br>
