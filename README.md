@@ -351,3 +351,31 @@ substr, stoi 등..<br><br><br>
 ### 33. [BOJ_15686_치킨배달](https://www.acmicpc.net/problem/15686)<br>
 [코드](./BOJ_치킨배달.cpp)<br>
 시간 : 4ms<br><br><br>
+
+
+### 34. [BOJ_2839_설탕배달](https://www.acmicpc.net/problem/2389)<br>
+[코드](./BOJ_설탕배달.cpp)<br>
+시간 : 4ms<br><br><br>
+
+
+### 35. [BOJ_16234_인구이동](https://www.acmicpc.net/problem/16234)<br>
+[코드](./BOJ_인구이동.cpp)<br>
+시간 : 4ms<br><br><br>
+
+### 36. [BOJ_2504_괄호의 값](https://www.acmicpc.net/problem/2504)<br>
+[코드](./BOJ_괄호의값.cpp)<br>
+시간 : 4ms<br><br><br>
+
+### 37. [BOJ_16235_나무 제태크](https://www.acmicpc.net/problem/16235)<br>
+[코드](./BOJ_나무제태크.cpp)<br>
+시간 : 4ms<br><br><br>
+
+### 38. [BOJ_16236_아기상어](https://www.acmicpc.net/problem/16236)<br>
+[코드](./BOJ_아기상어.cpp)<br>
+시간 : 4ms<br><br><br>
+
+### 39. [BOJ_17144_미세먼지 안녕](https://www.acmicpc.net/problem/17144)<br>
+[코드](./BOJ_.cpp)<br>
+시간 : 4ms<br><br><br>
+
+
