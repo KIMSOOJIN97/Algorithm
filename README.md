@@ -364,7 +364,7 @@ substr, stoi 등..<br><br><br>
 [코드](./BOJ_괄호의값.cpp)<br>
 시간 : 0ms<br><br><br>
 
-### 37. [BOJ_16235_나무-제태크](https://www.acmicpc.net/problem/16235)<br>
+### 37. [BOJ_16235_나무 제태크](https://www.acmicpc.net/problem/16235)<br>
 [코드](./BOJ_나무제태크.cpp)<br>
 시간 : 120ms<br><br><br>
 
