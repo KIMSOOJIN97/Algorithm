@@ -378,9 +378,9 @@ substr, stoi 등..<br><br><br>
 [코드](./BOJ_미세먼지안녕.cpp)<br>
 시간 : 40ms<br><br><br>
 
-### 40. [BOJ_17143_낚시왕](https://www.acmicpc.net/problem/17143)<br>
-[코드](./BOJ_낚시왕.cpp)<br>
-시간 : 44ms<br><br><br>
+### 40. [BOJ_1976_여행가자](https://www.acmicpc.net/problem/1976)<br>
+[코드](./BOJ_여행가자.cpp)<br>
+시간 : 4ms<br><br><br>
 
 ### 41. [BOJ_17070_파이프 옮기기](https://www.acmicpc.net/problem/17070)<br>
 [코드](./BOJ_파이프옮기기.cpp)<br>
