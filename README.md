@@ -388,3 +388,7 @@ substr, stoi 등..<br><br><br>
 시간 : 240ms<br><br><br>
 
 
+### 42. [BOJ_17140_이차원 배열과 연산](https://www.acmicpc.net/problem/17140)<br>
+[코드](./BOJ_파이프옮기기.cpp)<br>
+시간 : 0ms<br><br><br>
+
