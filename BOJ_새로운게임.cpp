@@ -1,166 +1,145 @@
 #include <iostream>
-#include <queue>
 #include <vector>
 
-#define MAX 21
+#define MAX 12
 
 using namespace std;
-/*
- 4개 이상 쌓이는 순간 게임이 종료된다.
-  1부터 순서대로 →, ←, ↑, ↓의 의미를 갖는다.
- 순서대로 행, 열의 번호, 이동 방향이
- */
 
-struct Horse{
-    int x, y ,dir;
+int N,K;
+int color[MAX][MAX]={0,};
+vector<int> map[MAX][MAX];
+
+int dx[4] = {0,0,-1,1};
+int dy[4] = {1,-1,0,0};
+
+struct HORSE{
+    int x,y,dir;
 };
-int turn=0;
+HORSE horse[10];
 
-int dx[5] = {0,0,0,-1,1};
-int dy[5] = {0,1,-1,0,0};
-
-int color[MAX][MAX];
-vector <int> map[MAX][MAX];
-
-Horse horse[12];
-int N , K;
-int nx,ny;
-
-void white(int idx)
+bool move(int col , int idx)
 {
-    int x =horse[idx].x;
-    int y =horse[idx].y;
+    int x = horse[idx].x;
+    int y = horse[idx].y;
     int dir = horse[idx].dir;
-    nx = x+dx[dir];
-    ny = y+dy[dir];
     
-    vector <int> v;
+    int nx = x+dx[dir];
+    int ny = y+dy[dir];
     
-    int size = map[x][y].size()-1;
     
-    for(int i=size;i>=0;i--){
-        
-        int num = map[x][y][i];
-        horse[num].x= nx;
-        horse[num].y= ny;
-        
-        v.push_back(map[x][y][i]);
+    vector<int> v;
+    int _size = map[x][y].size();
+    
+    while(1)
+    {
+        int num = map[x][y][_size-1];
+        _size--;
         map[x][y].pop_back();
-        
-        if(map[x][y][i] == idx) break;
-    }
-    
-    size = v.size()-1;
-    for(int i = size ; i>=0 ; i--)  map[nx][ny].push_back(v[i]);
-}
-
-void red(int idx)
-{
-    int x =horse[idx].x;
-    int y =horse[idx].y;
-    int dir = horse[idx].dir;
-    nx = x+dx[dir];
-    ny = y+dy[dir];
-    
-    vector <int> v;
-    
-    int size = map[x][y].size()-1;
-    
-    for(int i=size;i>=0;i--){
-        int num = map[x][y][i];
-        horse[num].x= nx;
-        horse[num].y= ny;
         v.push_back(num);
-        map[x][y].pop_back();
-        
-        if(num == idx) break;
+        if(num==idx)    break;
     }
-    
-    for(int i = 0; i<v.size() ; i++)  map[nx][ny].push_back(v[i]);
-}
-
-void blue(int idx)
-{
-    int dir = horse[idx].dir;
-    int x =horse[idx].x;
-    int y =horse[idx].y;
-    
-    if(dir == 1 || dir == 2)    dir= dir%2 + 1;
-    else if(dir == 3 || dir == 4)    dir= dir%2 + 3;
-    
-    
-    nx = x+dx[dir];
-    ny = y+dy[dir];
-    
-    if(nx< 1 || ny < 1 || nx > N || ny > N || color[nx][ny] == 2) return ;
-   
-    horse[idx].dir = dir;
-
-    if(color[nx][ny] == 0)   white(idx);
-    else if(color[nx][ny] == 1)   red(idx);
-    
-    
-}
-
-bool move()
-{
-    for(int k=0;k<K;k++){
-        
-        int x =horse[k].x;
-        int y =horse[k].y;
-        int dir = horse[k].dir;
-        
-        nx = x+dx[dir];
-        ny = y+dy[dir];
-        
-        if(nx< 1 || ny < 1 || nx > N || ny > N || color[nx][ny] == 2) blue(k);
-        else if(color[nx][ny] == 0)   white(k);
-        else if(color[nx][ny] == 1)   red(k);
-        
-        if(nx< 1 || ny < 1 || nx > N || ny > N) continue;
-
-        if(map[nx][ny].size() >= 4) {
-            cout << turn;
-            return false;
+    if(col ==0){
+        for(int i=v.size()-1;i>=0;i--)
+        {
+            int num = v[i];
+            map[nx][ny].push_back(num);
+            horse[num].x= nx;
+            horse[num].y = ny;
         }
     }
+    else {
+
+        for(int i=0;i<v.size();i++)
+        {
+            int num = v[i];
+            map[nx][ny].push_back(num);
+            horse[num].x= nx;
+            horse[num].y = ny;
+        }
+    }
+    
+    if(map[nx][ny].size() >= 4) return false;
     return true;
 }
 
 
-void solve()
+bool blue(int idx)
 {
+    bool res = true;
+    
+    int x = horse[idx].x;
+    int y = horse[idx].y;
+    int dir = horse[idx].dir;
+    
+    int nx = x+dx[dir];
+    int ny = y+dy[dir];
 
-    while(1){
-        turn++;
-        if(turn > 1000) {
-            cout << "-1";
-            return;
-        }
-        if(!move())
-            return;
-        
-        
-    }
+    if(nx< 0 ||  ny < 0  || nx >= N || ny >= N || color[nx][ny]==2)   return true;
+    else if(color[nx][ny]==0)  res = move(0,idx);
+    else if(color[nx][ny]==1) res = move(1,idx);
+    
+    return res;
+    
 }
 
+bool solve()
+{
+    
+    for(int i=0;i<K;i++){
+        bool res=true;
+        int x = horse[i].x;
+        int y = horse[i].y;
+        int dir = horse[i].dir;
+        
+        int nx = x+dx[dir];
+        int ny = y+dy[dir];
+        
+        if(nx< 0 ||  ny < 0  || nx >= N || ny >= N || color[nx][ny]==2){
+            
+            if(dir ==0) horse[i].dir=1;
+            else if(dir ==1) horse[i].dir=0;
+            else if(dir ==2) horse[i].dir=3;
+            else if(dir ==3) horse[i].dir=2;
+            res = blue(i);
+        }
+        else if(color[nx][ny]==0)  res = move(0,i);
+        else if(color[nx][ny]==1) res = move(1,i);
+        
+        if(res==false)  return false;
+    }
+    return true;
+}
+    
 int main(void)
 {
-    cin >> N >> K;
+    scanf("%d %d",&N,&K);
     
-    for(int i=1;i<=N;i++){
-        for(int j=1;j<=N;j++)
-            cin >> color[i][j];
+    for(int i=0;i<N;i++){
+        for(int j=0;j<N;j++){
+            scanf("%d",&color[i][j]);
+        }
     }
     
     for(int i=0;i<K;i++){
-        
-        cin >> horse[i].x >> horse[i].y >> horse[i].dir;
-        map[horse[i].x][horse[i].y].push_back(i);
+        int x,y,dir;
+        scanf("%d %d %d",&x,&y,&dir);
+        horse[i] = {x-1,y-1,dir-1};
+        map[x-1][y-1].push_back(i);
     }
     
-    solve();
+    int turn=0;
     
+    while(1){
+        turn++;
+        if(!solve())    break;
+        else if(turn > 1000){
+            printf("-1");
+            return 0;
+        }
+    }
+    printf("%d",turn);
+
     return 0;
+    
 }
 
