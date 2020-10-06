@@ -47,7 +47,7 @@
 40. [BOJ_1976_여행가자](#40-BOJ_1976_여행가자)<br>
 41. [BOJ_17070_파이프 옮기기](#41-BOJ_17070_파이프-옮기기)<br>
 42. [BOJ_17140_이차원 배열과 연산](#42-BOJ_17140_이차원-배열과-연산)<br>
-43. [BOJ_1920_수 ](#43-BOJ_1920_수-찾기)<br><br><br>
+43. [BOJ_1920_수 찾기 ](#43-BOJ_1920_수-찾기)<br><br><br>
 
 
 ### 1. [BOJ_14502_연구소](https://www.acmicpc.net/problem/14502)<br>
@@ -401,7 +401,7 @@ substr, stoi 등..<br><br><br>
 시간 : 0ms<br><br><br>
 
 ### 43. [BOJ_1920_수 찾기](https://www.acmicpc.net/problem/1920)<br>
-[코드](./BOJ_수.cpp)<br>
+[코드](./BOJ_수찾기.cpp)<br>
 시간 : 72ms<br>
 
 처음에 stl 안쓰고 bubble sort 직접 구현해서 풀었는데 시간초과 나왔따.<br>
