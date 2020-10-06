@@ -400,8 +400,8 @@ substr, stoi 등..<br><br><br>
 [코드](./BOJ_.cpp)<br>
 시간 : 0ms<br><br><br>
 
-### 42. [BOJ_1920_수 찾기](https://www.acmicpc.net/problem/1920)<br>
-[코드](./BOJ_.cpp)<br>
+### 43. [BOJ_1920_수 찾기](https://www.acmicpc.net/problem/1920)<br>
+[코드](./BOJ_수.cpp)<br>
 시간 : 72ms<br>
 
 처음에 stl 안쓰고 bubble sort 직접 구현해서 풀었는데 시간초과 나왔따.<br>
