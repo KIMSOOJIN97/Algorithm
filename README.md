@@ -412,12 +412,12 @@ substr, stoi 등..<br><br><br>
 
 ### 44. [BOJ_2573_빙산](https://www.acmicpc.net/problem/2573)<br>
 [코드](./BOJ_빙산.cpp)<br>
-시간 : 72ms<br><br><br>
+시간 : 120ms<br><br><br>
 
 ### 45. [BOJ_2003_수들의 합](https://www.acmicpc.net/problem/2003)<br>
 [코드](./BOJ_수들의_합2.cpp)<br>
-시간 : 72ms<br><br><br>
+시간 : 0ms<br><br><br>
 
 ### 46. [BOJ_17472_다리 만들기2](https://www.acmicpc.net/problem/17472)<br>
 [코드](./BOJ_다리만들기2.cpp)<br>
-시간 : 72ms<br><br><br>
+시간 : 0ms<br><br><br>
