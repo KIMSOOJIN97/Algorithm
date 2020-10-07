@@ -394,7 +394,7 @@ substr, stoi 등..<br><br><br>
 
 
 ### 42. [BOJ_17140_이차원 배열과 연산](https://www.acmicpc.net/problem/17140)<br>
-[코드](./BOJ_.cpp)<br>
+[코드](./BOJ_이차원ㅂ.cpp)<br>
 시간 : 0ms<br><br><br>
 
 
@@ -409,3 +409,15 @@ substr, stoi 등..<br><br><br>
 
 처음에 stl 안쓰고 bubble sort 직접 구현해서 풀었는데 시간초과 나왔따.<br>
 좀더 빠른 정렬 알고리즘을 사용해보자<br><br><br>
+
+### 44. [BOJ_2573_빙산](https://www.acmicpc.net/problem/2573)<br>
+[코드](./BOJ_빙산.cpp)<br>
+시간 : 72ms<br><br><br>
+
+### 45. [BOJ_2003_수들의 합](https://www.acmicpc.net/problem/2003)<br>
+[코드](./BOJ_빙산.cpp)<br>
+시간 : 72ms<br><br><br>
+
+### 46. [BOJ_17472_다리 만들기2](https://www.acmicpc.net/problem/17472)<br>
+[코드](./BOJ_다리 만들기.cpp)<br>
+시간 : 72ms<br><br><br>
