@@ -50,7 +50,7 @@
 43. [BOJ_1920_수 찾기 ](#43-BOJ_1920_수-찾기)<br>
 44. [BOJ_2573_빙산](#44-BOJ_1573_빙산)<br>
 45. [BOJ_2003_수들의 합](#45-BOJ_2003_수들의-합)<br>
-46. [BOJ_17472_다리 만들기2](#46-다리-만들기2)<br><br><br>
+46. [BOJ_17472_다리 만들기2](#46-BOJ_17472_다리-만들기2)<br><br><br>
 
 
 ### 1. [BOJ_14502_연구소](https://www.acmicpc.net/problem/14502)<br>
@@ -415,9 +415,9 @@ substr, stoi 등..<br><br><br>
 시간 : 72ms<br><br><br>
 
 ### 45. [BOJ_2003_수들의 합](https://www.acmicpc.net/problem/2003)<br>
-[코드](./BOJ_빙산.cpp)<br>
+[코드](./BOJ_수들의합.cpp)<br>
 시간 : 72ms<br><br><br>
 
 ### 46. [BOJ_17472_다리 만들기2](https://www.acmicpc.net/problem/17472)<br>
-[코드](./BOJ_다리 만들기.cpp)<br>
+[코드](./BOJ_다리만들기.cpp)<br>
 시간 : 72ms<br><br><br>
