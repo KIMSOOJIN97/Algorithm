@@ -8,26 +8,6 @@ using namespace std;
 
 int parent[MAX]={0,};
 
-class Edge{
-    
-public:
-    int start;
-    int end;
-    int dis;
-    
-    Edge(int s, int e, int d)
-    {
-        this->start = s;
-        this->end = e;
-        this->dis = d;
-    }
-    
-    bool operator < (Edge&e)
-    {
-        return this->dis < e.dis;
-    }
-};
-
 int Find(int idx)
 {
     if(idx == parent[idx])  return idx;
