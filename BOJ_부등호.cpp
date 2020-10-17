@@ -5,85 +5,61 @@
 using namespace std;
 
 int K;
-int visited[10]={0,};
 char oper[10];
 
-string _min="";
-string _max="";
-
-int MIN=1e9;
-int MAX=-1e9;
-
-vector <int> v;
-
-
-void solve()
+bool solve(vector <int> v)
 {
-    string str1="";
-    
-    for(int i=0;i<K;i++){
-            
-        char ch1 = oper[i];
+    int _size= v.size();
+
+    for(int i=0;i<_size-1;i++)
+    {
         
         int num1 = v[i];
         int num2 = v[i+1];
         
-        if(ch1 == '<'){
-            if(num1 > num2) return;
+        char op = oper[i];
+        if(op == '<'){
+            if(num1 > num2) return false;
         }
         else{
-            if(num1 < num2 )    return;
-        }
-        
-        if(i==0) str1 += to_string(num1);
-        str1 += to_string(num2);
-        
-    }
-     
-    int res = stoi(str1);
-    
-    if(MIN > res){
-        MIN = res;
-        _min = str1;
-    }
-    if(MAX < res ){
-        MAX = res;
-        _max= str1;
-    }
-}
-
-void DFS(int cnt)
-{
-    if(cnt == K+1)  {
-        solve();
-        return ;
-    }
-    
-    for(int i=0;i<10;i++){
-        if(visited[i]==0){
-            visited[i] = 1;
-            v.push_back(i);
-            DFS(cnt+1);
-            v.pop_back();
-            visited[i]=0;
+            if(num1 < num2) return false;
         }
     }
+    
+    return true;
 }
 
 int main(void)
 {
+    
     ios_base::sync_with_stdio(0);
     cin.tie();
     
     cin >> K;
     for(int i=0;i<K;i++)    cin >> oper[i];
     
-    DFS(0);
+    vector <int> max_v;
+    for(int i=9;i>=9-K;i--)   max_v.push_back(i);
     
-    cout << _max <<"\n";
-    cout << _min;
+    while(1){
+        if(solve(max_v))    break;
+        prev_permutation(max_v.begin(),max_v.end());
+    }
     
+    vector <int> min_v;
+    for(int i=0;i<=K;i++)   min_v.push_back(i);
+    
+    while(1){
+        if(solve(min_v))    break;
+        next_permutation(min_v.begin(),min_v.end());
+    }
+    
+    for(int i=0;i<max_v.size();i++) cout<<max_v[i];
+    cout << "\n";
+    for(int i=0;i<min_v.size();i++) cout<<min_v[i];
+
     return 0;
     
 }
+
 
