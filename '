@@ -1,0 +1,47 @@
+#include <iostream>
+#define MAX 500
+
+using namespace std;
+
+int N,M;
+int map[MAX][MAX]={0,};
+int DP[MAX][MAX]={0,};
+int visited[MAX][MAX]={0,};
+
+int dx[4] = {1,-1,0,0};
+int dy[4] = {0,0,1,-1};
+
+int DFS(int x , int y)
+{
+    if( x==0  && y==0 ) return 1;
+    
+    if(visited[x][y]==1)    return DP[x][y];
+    visited[x][y]=1;
+    
+    for(int i=0;i<4;i++){
+        
+        int nx = x+dx[i];
+        int ny = y+dy[i];
+        
+        if(nx < 0 || ny <0 || nx >= N || ny >= M)   continue;
+        if(map[nx][ny] <= map[x][y])    continue;
+        DP[x][y] += DFS(nx,ny);
+    }
+    return DP[x][y];
+}
+
+int main(void)
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    
+    cin >> N >>M;
+    for(int i=0;i<N;i++){
+        for(int j=0;j<M;j++)    cin >> map[i][j];
+    }
+
+    cout << DFS(N-1,M-1);
+    return 0;
+    
+}
+
