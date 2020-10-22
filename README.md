@@ -434,6 +434,6 @@ substr, stoi 등..<br><br><br>
 시간 : 0ms<br>
 
 ### 46. [BOJ_1520_내리막 길](https://www.acmicpc.net/problem/1520)<br>
-[코드](./BOJ_내리막길.cpp)<br>
+[코드](./BOJ_내리막_길.cpp)<br>
 시간 : 0ms<br><br><br>
 
