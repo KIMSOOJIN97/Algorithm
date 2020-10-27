@@ -440,7 +440,7 @@ substr, stoi 등..<br><br><br>
 [코드](./BOJ_내리막_길.cpp)<br>
 시간 : 0ms<br><br><br>
 
-### 59. [BOJ_11399_회의실_배정](https://www.acmicpc.net/problem/11399)<br>
+### 59. [BOJ_11399_회의실 배정](https://www.acmicpc.net/problem/11399)<br>
 [코드](./BOJ_회의실_배정.cpp)<br>
 시간 : 0ms<br><br><br>
 
