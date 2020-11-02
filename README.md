@@ -446,5 +446,9 @@ substr, stoi 등..<br><br><br>
 [코드](./BOJ_회의실_배정.cpp)<br>
 시간 : 0ms<br><br><br>
 
+### 61. [BOJ_2193_이친수](https://www.acmicpc.net/problem/2193)<br>
+[코드](./BOJ_이친수.cpp)<br>
+시간 : 0ms<br><br><br>
+
 
 
