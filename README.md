@@ -65,8 +65,8 @@
 58. [BOJ_1931_ATM](#58-BOJ_11047_회의실_배정)<br>
 59. [BOJ_11399_회의실_배정](#59-BOJ_11399_ATM)<br>
 60. [BOJ_2206_벽_부수고_이동하기](#60-BOJ_2206_벽-부수고-이동하기)<br>
-61. [BOJ_2193_이친수](#61-BOJ_2193_이친수)<br><br><br>
-
+61. [BOJ_2193_이친수](#61-BOJ_2193_이친수)<br>
+62. [BOJ_2096_내려가기](#62-BOJ_2096_내려가기)<br><br><br>
 
 
 ### 1. [BOJ_14502_연구소](https://www.acmicpc.net/problem/14502)<br>
@@ -451,4 +451,8 @@ substr, stoi 등..<br><br><br>
 시간 : 0ms<br><br><br>
 
 
+
+### 62. [BOJ_2096_내려가기](https://www.acmicpc.net/problem/2096)<br>
+[코드](./BOJ_내려가기.cpp)<br>
+시간 : 0ms<br><br><br>
 
