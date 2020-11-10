@@ -1,0 +1,27 @@
+#include <string>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+bool solution(vector<string> phone_book) {
+    
+    bool answer = true;
+    
+    sort(phone_book.begin(), phone_book.end());
+    int cnt = phone_book.size();
+    
+    for(int i=0;i<cnt;i++){
+        
+        string tmp1 = phone_book[i];
+        
+        for(int j=i+1;j<cnt;j++){
+            
+            int len = phone_book[j].size();
+            long long idx = phone_book[j].find(tmp1);
+            
+            if(idx >=0 && idx < len)    return false;
+        } 
+    }
+    return true;
+}
