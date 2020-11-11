@@ -1,0 +1,33 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+vector <int> number;
+int len = 0;
+int tar =0;
+int ans =0;
+
+void DFS(int sum, int cnt )
+{
+    if(cnt == len){
+        if(sum == tar)  ans++;
+        return;
+    }
+    
+    DFS(sum+number[cnt],cnt+1);
+    DFS(sum-number[cnt],cnt+1);
+
+}
+
+int solution(vector<int> numbers, int target) {
+    int answer = 0;
+    len = numbers.size();
+    tar = target;
+    number = numbers;
+    
+    
+    DFS(0,0);
+    answer = ans;
+    return answer;
+}
