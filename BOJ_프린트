@@ -1,0 +1,52 @@
+#include <iostream>
+#include <queue>
+
+using namespace std;
+
+
+int main(void)
+{
+    int T;
+    scanf("%d",&T);
+    
+    for(int i=0;i<T;i++){
+        
+        int N,M;
+        cin >> N >> M;
+        
+        queue <pair<int, int>> q;
+        priority_queue <int> pq;
+        
+        for(int j=0;j<N;j++){
+            int temp;
+            cin >> temp;
+            
+            q.push({j,temp});
+            pq.push(temp);
+        }
+                
+        int cnt =0;
+        while(1){
+            
+            int num = q.front().second;
+            int idx = q.front().first;
+            q.pop();
+
+            if(num != pq.top()){
+                q.push({idx,num});
+            }
+            else{
+                cnt++;
+                pq.pop();
+                if(idx == M){
+                    cout<<cnt<<"\n";
+                    break;
+                }
+            }
+        }
+    }
+
+    return 0;
+    
+}
+
