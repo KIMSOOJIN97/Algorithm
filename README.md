@@ -70,6 +70,8 @@
 63. [BOJ_1932_정수 삼각형](#63-BOJ_1932_정수-삼각형)<br>
 64. [PROG_불량 사용자](#64-PROG_불량-사용자)<br><br><br> 
 
+잔디심자
+
 ### 1. [BOJ_14502_연구소](https://www.acmicpc.net/problem/14502)<br>
 [코드](./BOJ_연구소.cpp)<br>
 시간 : 24ms
