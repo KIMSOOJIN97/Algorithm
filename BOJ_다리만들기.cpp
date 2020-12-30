@@ -11,9 +11,24 @@ struct pos{
 int dx[4] = {-1,0,1,0};
 int dy[4] = {0,1,0,-1};
 int map[MAX][MAX]={0,};
+bool tmp[MAX][MAX]={0,};
 int N;
 int cnt=0;
 int answer=MAX*MAX;
+
+void DFS(int x, int y,int cnt)
+{
+    map[x][y]=cnt;
+    tmp[x][y]=true;
+    
+    for(int i=0;i<4;i++){
+        int nx = x+dx[i];
+        int ny = y+dy[i];
+        if(nx<0 || ny <0 || nx >= N || ny >= N || tmp[nx][ny] || map[nx][ny]==0 )  continue;
+        
+        DFS(nx,ny,cnt);
+    }
+}
 
 int BFS(int idx)
 {
@@ -48,6 +63,7 @@ int BFS(int idx)
     return 0;
 }
 
+
 int main(void)
 {
     cin >> N;
@@ -56,34 +72,11 @@ int main(void)
             cin >> map[i][j];
         }
     }
-    
-    queue <pos> q;
-    int visited[MAX][MAX]={0,};
-    
     for(int i=0;i<N;i++){
         for(int j=0;j<N;j++){
-            if(visited[i][j]==0 && map[i][j]==1){
+            if(map[i][j]==1 && !tmp[i][j]){
                 cnt++;
-                map[i][j]=cnt;
-                visited[i][j]=1;
-                q.push({i,j});
-            }
-            
-            while(!q.empty()){
-                int x = q.front().x;
-                int y = q.front().y;
-                q.pop();
-                for(int k=0;k<4;k++){
-                    int nx = x+dx[k];
-                    int ny = y+dy[k];
-                    
-                    if(nx<0 || ny <0 || nx >= N || ny >= N || visited[nx][ny])  continue;
-                    if(map[nx][ny] == 0 )  continue;
-                    
-                    visited[nx][ny]=1;
-                    map[nx][ny] = cnt;
-                    q.push({nx,ny});
-                }
+                DFS(i,j,cnt);
             }
         }
     }
