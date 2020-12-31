@@ -20,38 +20,39 @@ int map[MAX][MAX]={0,};
 int w,h;
 int res=0;
 
+queue <pos> fq;
 
 void BFS()
 {
     queue <pos> q;
+    
     q.push(start);
     visited[start.x][start.y]=1;
     
     while(!q.empty()){
         
         int _size = q.size();
+        int fsize = fq.size();
         
-        for(int i=0;i<w;i++){
-            for(int j=0;j<h;j++){
-                if(map[i][j] == 1){
-                    for(int k=0;k<4;k++){
-                        
-                        int nx = i+dx[k];
-                        int ny = j+dy[k];
-                        
-                        if(nx<0 || ny<0 || nx>=w || ny >= h || map[nx][ny]!= 0)  continue;
-                        tmp[nx][ny] = true;
-                    }
-                }
-            }
-        }
-        
-        for(int i=0;i<w;i++){
-            for(int j=0;j<h;j++){
-                if(tmp[i][j])    map[i][j]=1;
-            }
-        }
+        while(fsize--){
+            int x = fq.front().x;
+            int y = fq.front().y;
+            
+            fq.pop();
+            
+            for(int i=0;i<4;i++){
+                
+                int nx = x+dx[i];
+                int ny = y+dy[i];
+                
+                if(nx<0 || ny<0 || nx>=w || ny >= h || map[nx][ny]!= 0 || visited[nx][ny] != 0)  continue;
 
+                map[nx][ny]=1;
+                visited[nx][ny]=-1;
+                fq.push({nx,ny});
+            }
+        }
+        
         while(_size--){
         
             int x = q.front().x;
@@ -69,7 +70,7 @@ void BFS()
                     return;
                 }
                 
-                if(map[nx][ny]!= 0 || visited[nx][ny])  continue;
+                if(map[nx][ny]!= 0 || visited[nx][ny]!=0)  continue;
 
                 visited[nx][ny]=visited[x][y]+1;
                 q.push({nx,ny});
@@ -91,6 +92,8 @@ int main(void)
         memset(visited, false, sizeof(visited));
         memset(map, false, sizeof(map));
 
+        while(!fq.empty())  fq.pop();
+        
         cin >> h >> w;
         res=0;
         
@@ -101,8 +104,12 @@ int main(void)
                 cin >> ch;
                 
                 if( ch == '@')  start={i,j};
-                else if( ch == '#') map[i][j]=-1;
-                else if( ch == '*') map[i][j]=1;
+                else if( ch == '*') {
+                    map[i][j]=1;
+                    visited[i][j]=-1;
+                    fq.push({i,j});
+                }
+                else if( ch == '#') map[i][j]=1;
                 
             }
         }
