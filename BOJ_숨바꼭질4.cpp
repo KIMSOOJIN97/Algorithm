@@ -1,32 +1,31 @@
 #include <iostream>
 #include <queue>
-#define MAX 100001
+#define MAX 200001
 
 using namespace std;
 
 int n[2] = {-1,1};
 int visited[MAX]={0,};
+int parent[MAX]={0,};
 int N,K;
 vector <int> ans;
 
-void BFS()
+void bfs()
 {
     queue<int> q;
     q.push(N);
-    visited[N]=1;
     
     while(!q.empty()){
         int idx = q.front();
         q.pop();
         
         if(idx == K ){
-            int idx =K;
-            int pos=0;
+            cout << visited[idx] << "\n";
             while(idx != N){
                 ans.push_back(idx);
-                pos = visited[idx];
-                idx = pos;
+                idx= parent[idx];
             }
+            ans.push_back(N);
             return ;
         }
         for(int i=0;i<3;i++){
@@ -34,28 +33,22 @@ void BFS()
             if(i==2)    nidx = idx*2;
             else nidx = idx+n[i];
             
-            if(nidx < 0 || nidx >= MAX || visited[nidx] !=0) continue;
+            if(nidx < 0 || nidx > MAX || visited[nidx] ) continue;
             
             q.push(nidx);
-            visited[nidx] = idx;
+            visited[nidx]=visited[idx]+1;
+            parent[nidx] = idx;
         }
     }
-}
 
 int main(void)
 {
     cin >> N >> K;
-    BFS();
-    
-
-    cout << ans.size() << "\n";
-    if(ans.size()==0)   return 0;
-
-    cout << N << " ";
-
-    for(int i=ans.size()-1 ; i>=0 ; i--)
+    bfs();
+    int _size = ans.size()-1;
+    for(int i=_size; i>=0 ; i--)
         cout << ans[i]<< " ";
-    
     return 0;
 }
+
 
