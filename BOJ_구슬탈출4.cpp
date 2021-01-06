@@ -1,4 +1,6 @@
 #include <iostream>
+#include <queue>
+
 #define MAX 11
 
 using namespace std;
@@ -7,99 +9,90 @@ struct pos{
     int x,y;
 };
 
+struct ball{
+    int rx,ry;
+    int bx,by;
+    int cnt;
+};
+
 pos red,blue,goal;
 
 int map[MAX][MAX]={0,};
 int N,M;
-int ans=MAX*MAX;
+bool visited[MAX][MAX][MAX][MAX]={false,};
 
 int dx[4] = {-1,0,1,0};
 int dy[4] = {0,1,0,-1};
 
 
-int move(int dir)
+pos move(int x, int y,int dir)
 {
-    int rx =red.x;
-    int ry =red.y;
-    
+
     while(1){
-        rx+=dx[dir];
-        ry+=dy[dir];
-        if(rx < 0 || ry <0 || rx >= N || ry >= M || map[rx][ry] != 0 ){
-            rx -= dx[dir];
-            ry -= dy[dir];
+        x+=dx[dir];
+        y+=dy[dir];
+        if(x < 0 || y <0 || x >= N || y >= M || map[x][y] != 0 ){
+            x -= dx[dir];
+            y -= dy[dir];
             break;
         }
-        if(goal.x==rx && goal.y== ry) break;
+        if(goal.x==x && goal.y== y) break;
     }
 
-    int bx =blue.x;
-    int by =blue.y;
-    
-    while(1){
-        bx+=dx[dir];
-        by+=dy[dir];
-        if(bx < 0 || by <0 || bx >= N || by >= M || map[bx][by] != 0 ){
-            bx -= dx[dir];
-            by -= dy[dir];
-            break;
-        }
-        if(goal.x==bx && goal.y== by) break;
-    }
-
-    if((rx==goal.x)&&(ry == goal.y) && (bx == goal.x) &&(by==goal.y))    return -1;
-    else if((rx==goal.x)&&(ry == goal.y))    return 1;
-    else if((bx == goal.x) &&(by==goal.y))    return -1;
-    
-    if((rx==bx)&&(ry == by)){
-        
-        if(dir==0){
-            if(red.x < blue.x)  bx++;
-            else    ry++;
-        }
-        else if(dir == 1){
-            if(red.y < blue.y)  ry--;
-            else    by--;
-        }
-        else if(dir == 2){
-            if (red.x < blue.x) rx--;
-            else    bx--;
-        }
-        else if(dir == 3){
-            if( red.y < blue.y) by++;
-            else    ry++;
-        }
-    }
-    if(red.x == rx &&red.y == ry && blue.x == bx && blue.y == by)   return -1;
-    red={rx,ry};
-    blue={bx,by};
-    
-    return 0;
-
+    return {x,y};
 }
-bool DFS(int cnt)
+
+int BFS()
 {
-    for(int i=0;i<4;i++){
+    queue <ball> q;
+    
+    q.push({red.x,red.y,blue.x,blue.y,0});
+    visited[red.x][red.y][blue.x][blue.y]=true;
+    
+    while(!q.empty()){
+
+        int rx = q.front().rx;   int ry= q.front().ry;
+        int bx = q.front().bx;   int by= q.front().by;
+        int cnt = q.front().cnt;
+        q.pop();
         
-        pos tmp_red=red;
-        pos tmp_blue=blue;
-        
-        int res = move(i);
-        
-        if(res == -1)   continue;
-        else if(res == 1){
-            if(cnt < ans)   ans = cnt+1;
-            return true;
+        for(int i=0;i<4;i++){
+            
+            pos tmp_red = move(rx,ry,i);
+            pos tmp_blue = move(bx,by,i);
+            
+            
+            if((tmp_blue.x == goal.x) &&(tmp_blue.y==goal.y))  continue;
+            if((tmp_red.x==goal.x)&&(tmp_red.y == goal.y))    return cnt+1;
+            
+            if((tmp_blue.x==tmp_red.x)&&(tmp_blue.y==tmp_red.y)){
+                
+                if(i==0){
+                    if(rx < bx)  tmp_blue.x++;
+                    else    tmp_red.x++;
+                }
+                else if(i == 1){
+                    if(ry < by)  tmp_red.y--;
+                    else    tmp_blue.y--;
+                }
+                else if(i == 2){
+                    if (rx < bx) tmp_red.x--;
+                    else    tmp_blue.x--;
+                }
+                else if(i == 3){
+                    if( ry< by) tmp_blue.y++;
+                    else    tmp_red.y++;
+                }
+            }
+            
+            if(visited[tmp_red.x][tmp_red.y][tmp_blue.x][tmp_blue.y])   continue;
+            visited[tmp_red.x][tmp_red.y][tmp_blue.x][tmp_blue.y]=true;
+            q.push({tmp_red.x,tmp_red.y,tmp_blue.x,tmp_blue.y,cnt+1});
         }
-        
-        if(DFS(cnt+1))  return true;
-    
-        red = tmp_red;
-        blue = tmp_blue;
     }
-    return false;
-    
+    return -1;
 }
+
 int main(void)
 {
     cin >> N >> M;
@@ -116,10 +109,8 @@ int main(void)
         }
     }
     
-   
-    DFS(0);
-    if(ans == MAX * MAX)    cout << "-1";
-    else   cout << ans;
+    cout << BFS();
+    
     return 0;
     
 }
