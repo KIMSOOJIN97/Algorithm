@@ -1,0 +1,97 @@
+#include <iostream>
+#include <queue>
+#define MAX 1001
+
+using namespace std;
+
+struct pos{
+    int x,y;
+};
+     
+queue <pos> fire;
+queue <pos> person;
+
+int N,M;
+int map[MAX][MAX]={0,};
+int visited[MAX][MAX]={0,};
+
+int dx[4]={-1,0,1,0};
+int dy[4]={0,1,0,-1};
+
+void BFS()
+{
+    while(!person.empty()){
+        
+        int fnum = fire.size();
+        int pnum = person.size();
+        
+        while(fnum){
+            fnum--;
+            int x = fire.front().x;
+            int y = fire.front().y;
+            
+            fire.pop();
+            
+            for(int i=0;i<4;i++){
+                
+                int nx = x+dx[i];
+                int ny = y+dy[i];
+                
+                if(nx<0||ny<0||nx>=N||ny>=M||map[nx][ny]!=0)    continue;
+                
+                fire.push({nx,ny});
+                map[nx][ny] = 1;
+            }
+        }
+        
+        while(pnum){
+            pnum--;
+            int x = person.front().x;
+            int y = person.front().y;
+            
+            person.pop();
+            if(x == 0 || y ==0 || x==N-1 || y ==M-1) {
+                cout << visited[x][y];
+                return;
+            }
+            
+            for(int i=0;i<4;i++){
+                
+                int nx = x+dx[i];
+                int ny = y+dy[i];
+                
+                if(nx<0||ny<0||nx>=N||ny>=M||map[nx][ny]!=0||visited[nx][ny]!=0)    continue;
+                
+                person.push({nx,ny});
+                visited[nx][ny] = visited[x][y]+1;
+            }
+        }
+    }
+    
+    cout << "IMPOSSIBLE";
+    return;
+}
+
+int main(void)
+{
+    cin >> N >> M;
+    for(int i=0;i<N;i++){
+        for(int j=0;j<M;j++){
+            char ch;
+            cin >> ch;
+            if(ch == '#')   map[i][j]=-1;
+            else if(ch == 'F'){
+                fire.push({i,j});
+                map[i][j]=1;
+            }
+            else if(ch == 'J') {
+                person.push({i,j});
+                visited[i][j]=1;
+            }
+        }
+    }
+    BFS();
+    
+    return 0;
+}
+
