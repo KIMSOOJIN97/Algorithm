@@ -1,0 +1,42 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+#define MAX 100001
+
+using namespace std;
+
+struct info{
+    int weight,value;
+};
+
+int N,K;
+
+int arr[101][MAX]={0,};
+vector<info> v;
+
+int main(void)
+{
+    cin >> N >>K;
+    for(int i=0;i<N;i++){
+        int w,val;
+        cin >> w>> val;
+        v.push_back({w,val});
+    }
+
+    for(int i=0;i<N;i++){
+        for(int j=0;j<=K;j++){
+            if(i==0){
+                if(v[i].weight <= j) arr[i][j]=v[i].value;
+            }
+            else{
+                if(v[i].weight <= j)    arr[i][j]=max(arr[i-1][j] , v[i].value+arr[i-1][j-v[i].weight]);
+                else    arr[i][j]=arr[i-1][j];
+            }
+        }
+    }
+    
+    printf("%d", arr[N-1][K]);
+    return 0;
+}
+
