@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+
+#define MAX 1001
+
+using namespace std;
+
+int N,M;
+int map[MAX][MAX]={0,};
+int DP[MAX][MAX]={0,};
+int ans=0;
+
+int main(void)
+{
+    scanf("%d %d",&N,&M);
+    for(int i=1;i<=N;i++){
+        for(int j=1;j<=M;j++){
+            scanf("%1d",&map[i][j]);
+            if(map[i][j]==1)    DP[i][j]=1;
+        }
+    }
+    
+    for(int i=0;i<=N;i++){
+        for(int j=0;j<=M;j++){
+            if(map[i][j]!=0){
+                if(DP[i-1][j]!=0 && DP[i][j-1] != 0 && DP[i-1][j-1]!=0){
+                    if(DP[i-1][j]==1 || DP[i][j-1] ==1 || DP[i-1][j-1]==1) DP[i][j]=4;
+                    else{
+                        int size = min(DP[i-1][j],DP[i-1][j-1]);
+                        size= min(size, DP[i][j-1]);
+                        int len = sqrt(size)+1;
+                        DP[i][j]= len*len;
+                    }
+                }
+            }
+            ans = max(ans, DP[i][j]);
+        }
+    }
+    printf("%d",ans);
+    
+    return 0;
+}
+
