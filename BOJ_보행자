@@ -1,0 +1,32 @@
+#include <vector>
+#define MAX 502
+using namespace std;
+
+int MOD = 20170805;
+
+int solution(int m, int n, vector<vector<int>> city_map) {
+    int answer = 0;
+    int right[MAX][MAX]={0,};
+    int down[MAX][MAX]={0,};
+
+    down[1][1]=1;
+    right[1][1]=1;
+    
+    
+    for(int i=1;i<=m;i++){
+        for(int j=1;j<=n;j++){
+            if(city_map[i-1][j-1]==0){
+                down[i][j]=(down[i-1][j]%MOD+right[i][j-1]%MOD)%MOD;
+                right[i][j]=(down[i-1][j]%MOD+right[i][j-1]%MOD)%MOD;
+                
+            }
+            else if(city_map[i][j]==2){
+                down[i][j]=down[i-1][j]%MOD;
+                right[i][j]=right[i][j-1]%MOD;
+            }
+        }
+    }
+    answer = (right[m][n-1]%MOD+down[m-1][n]%MOD)%MOD;
+    
+    return answer;
+}
