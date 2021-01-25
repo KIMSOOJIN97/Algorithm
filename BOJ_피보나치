@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int Fibo(int idx)
+{
+    if(idx == 0)    return 0;
+    else if(idx == 1)   return 1;
+    else    return Fibo(idx-1)+Fibo(idx-2);
+}
+
+int main(void)
+{
+    int N;
+    scanf("%d",&N);
+    cout << Fibo(N);
+    return 0;
+}
+
