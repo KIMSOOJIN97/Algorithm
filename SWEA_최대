@@ -1,0 +1,40 @@
+#include <iostream>
+#include <algorithm>
+#include <string>
+#define MAX 7
+
+using namespace std;
+
+string str1;
+int ans = 0;
+int N;
+
+void DFS(int cnt,int idx )
+{
+    if(cnt == N){
+        ans = max(ans, stoi(str1));
+        return ;
+    }
+    for(int i=idx ; i<str1.size();i++){
+        for(int j=i+1;j<str1.size();j++){
+            swap(str1[i],str1[j]);
+            DFS(cnt+1,i+1);
+            swap(str1[j],str1[i]);
+        }
+    }
+}
+
+int main(void)
+{
+    int T;
+    cin >> T;
+    
+    for(int i=0;i<T;i++){
+        int ans =0;
+        cin >> str1 >> N;
+        DFS(0,0);
+        cout << "#" << i+1 << " " << ans << "\n";
+    }
+    return 0;
+}
+
