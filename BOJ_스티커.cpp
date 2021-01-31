@@ -22,18 +22,18 @@ int main(void)
         int DP[2][MAX]={0,};
 
         for(int i=0;i<2;i++){
-            for(int j=0;j<N;j++){
+            for(int j=1;j<=N;j++){
                 scanf("%d",&arr[i][j]);
             }
         }
-        DP[0][0]= arr[0][0];
         DP[0][1]= arr[0][1];
+        DP[1][1]= arr[1][1];
         
-        for(int i=1;i<N;i++){
-            DP[0][i] = DP[1][i-1] + arr[0][i];
-            DP[1][i] = DP[0][i-1] + arr[1][i];
+        for(int i=1;i<=N;i++){
+            DP[0][i] = max(DP[1][i-1],DP[1][i-2] )+ arr[0][i];
+            DP[1][i] = max(DP[0][i-1],DP[0][i-2] )+ arr[1][i];
         }
-        printf("%d\n",_max(DP[0][N-1] , DP[1][N-1]));
+        printf("%d\n",_max(DP[0][N] , DP[1][N]));
     }
     return 0;
 }
