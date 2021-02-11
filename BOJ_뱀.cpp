@@ -1,90 +1,91 @@
 #include <iostream>
+#include <queue>
 #define MAX 101
 
 using namespace std;
 
-int N,K,L;
+struct pos{
+    int x,y;
+};
+
+pos head;
+queue <pos> tail;
+int dir;
 int map[MAX][MAX]={0,};
+int N;
 
 int dx[4] = {-1,0,1,0};
 int dy[4] = {0,1,0,-1};
 
-struct MOVE{
-    int time;
-    char dir;
-};
-
-MOVE mv[100];
-
-void solve()
+bool move()
 {
-    int visited[MAX][MAX]={0,};
-    int tm=0;
-
-    for(int i=1;i<=N;i++){
-        for(int j=1;j<=N;j++)    visited[i][j]=-1;
-    }
+    int nx = head.x+dx[dir];
+    int ny = head.y+dy[dir];
     
-    int tx=1,ty=1;
-    int hx=1,hy=1;
-    int dir=1;
-    int idx =0;
+    if(nx<0 || ny <0 || nx >= N || ny >= N || map[nx][ny] == -1)  return true;
     
-    while(1)
-    {
-        visited[hx][hy]=dir;
-        tm++;
-        hx += dx[dir];
-        hy += dy[dir];
-        
-        if(hx<1 || hy<1 || hx > N || hy > N || visited[hx][hy] != -1)    break;
-        if(map[hx][hy]==1){
-            map[hx][hy]=0;
-        }
-        else{
-            int d = visited[tx][ty];
-            visited[tx][ty] = -1;
-            tx += dx[d];
-            ty += dy[d];
-        }
-        
-        if(idx < L && tm == mv[idx].time){
-            if(mv[idx].dir == 'L'){
-                if(dir ==0)  dir =3;
-                else    dir--;
-            }
-            else{
-                if(dir== 3) dir =0;
-                else    dir++;
-            }
-            idx++;
-        }
+    tail.push({nx,ny});
+    head = {nx,ny};
+    if(map[nx][ny] == 1)    map[nx][ny] = -1;
+    else{
+        map[nx][ny] = -1;
+        int tx = tail.front().x;
+        int ty = tail.front().y;
+        map[tx][ty]=0;
+        tail.pop();
     }
-    cout << tm;
+    return false;
 }
+
 int main(void)
 {
+    dir =1;
+    head = {0,0};
+    tail.push({0,0});
+    map[0][0]=-1;
     
-    cin >> N >>K;
+    int K;
+    scanf("%d %d",&N,&K);
     
-    for(int i=0;i<K;i++){
+    for(int i=0;i<K;i++)
+    {
         int x,y;
-        cin >> x>>y;
-        map[x][y]=1;
+        scanf("%d %d",&x,&y);
+        map[x-1][y-1]= 1;
     }
     
-    cin >> L;
-    for(int i=0;i<L;i++){
-        int t;
+    vector <pair<int , char>> rotate;
+    int L;
+    scanf("%d",&L);
+    for(int i=0;i<L;i++)
+    {
+        int s;
         char d;
-        cin >> t >> d;
-        
-        mv[i]={t,d};
+        cin >>s >>d;
+        rotate.push_back({s,d});
     }
-    
-    solve();
-        
+    int cnt =0;
+    int _time=0;
+    while(1)
+    {
+        _time++;
+        if(move())  break;
+        if(cnt < L && _time == rotate[cnt].first)
+        {
+            if(rotate[cnt].second == 'L')
+            {
+                if(dir ==0) dir = 3;
+                else dir--;
+            }
+            else
+            {
+                if(dir ==3) dir =0;
+                else    dir++;
+            }
+            cnt++;
+        }
+    }
+    cout << _time;
     return 0;
-    
 }
 
